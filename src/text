@@ -1,0 +1,14 @@
+ {/* <li 
+      key = {todo.id}
+      className="todoList"
+      >
+      <div>
+      <input 
+      type='checkbox' 
+      checked={todo.completed}
+      onChange={e => toggleChecked(todo.id, e.target.checked)} 
+      />  
+      <p>{todo.title}</p>
+      </div>
+      <button onClick={()=>deleteItem(todo.id)}><DeleteIcon/></button>
+      </li> */}
