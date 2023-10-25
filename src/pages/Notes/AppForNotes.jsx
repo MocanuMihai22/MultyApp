@@ -5,6 +5,7 @@ import { TextArea } from "./TextArea";
 import { useState, useEffect } from "react";
 import HighlightIcon from '@material-ui/icons/Highlight';
 import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck'; 
+import BookIcon from '@material-ui/icons//Book';
 
 
 
@@ -39,9 +40,16 @@ return(
     color={'orange'}
     name={"Note"}
     icon={<HighlightIcon fontSize="medium"/>}
+
     icon2={<PlaylistAddCheckIcon />}
-    theClass={"secondIconToDo"}
-    theLink={"/todoapp"}
+    theClass2={"secondIconToDo"}
+    theLink2={"/todoapp"}
+
+    icon3={<BookIcon />}
+    theClass3={"secondIconNotebook"}
+    theLink3={"/notebook"}
+    
+   
     />
 
     <TextArea onAdd ={addNote}/>

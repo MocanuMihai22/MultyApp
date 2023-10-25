@@ -36,6 +36,15 @@ header h1 {
   text-decoration: none;
   color: #124cb1;
 }
+.secondIconNotebook {
+  text-decoration: none;
+  color: #dcb084;
+}
+.secondIconDiv{
+display: flex;
+justify-content: center;
+align-items: center;
+}
 footer {
   position: absolute;
   text-align: center;
@@ -127,7 +136,7 @@ form.create-todo{
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
-form.create-todo textarea{
+form.create-todo > textarea{
   width: 100%;
   border: none;
   padding: 4px;
@@ -166,8 +175,8 @@ form.create-note {
   border-radius: 7px;
   box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
-form.create-note input,
-form.create-note textarea {
+form.create-note > input,
+form.create-note > textarea {
   width: 100%;
   border: none;
   padding: 4px;
@@ -176,7 +185,7 @@ form.create-note textarea {
   font-family: inherit;
   resize: none;
 }
-form.create-note button {
+form.create-note > button {
   position: absolute;
   right: 18px;
   bottom: -18px;
@@ -197,6 +206,119 @@ form.create-note button {
 .purple{
   background-color: #124cb1;
 }
+.notebookColor{
+  background-color: #dcb084;
+}
 .background{
   background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
+
+/* NOTEBOOK styling */
+
+.NBbutton {
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  color: #08c;
+}
+.NBbutton:hover {
+  color: #04c;
+}
+
+.App {
+  display: flex;
+}
+
+/* SIDEBAR STYLES */
+
+.app-sidebar {
+  width: 30%;
+  height: 100vh;
+  border-right: 1px solid #ddd;
+}
+
+.app-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
+.app-sidebar-header h1 {
+  margin: 0;
+}
+
+.app-sidebar-notes {
+  height: calc(100vh - 78px);
+  overflow-y: scroll;
+}
+.app-sidebar-note {
+  padding: 25px;
+  cursor: pointer;
+}
+.sidebar-note-title {
+  display: flex;
+  justify-content: space-between;
+}
+.app-sidebar-note button {
+  color: crimson;
+}
+.app-sidebar-note p {
+  margin: 10px 0;
+}
+.app-sidebar-note small {
+  display: block;
+  color: #999;
+}
+
+.app-sidebar-note:hover {
+  background: #ddd;
+}
+.app-sidebar-note.active,
+.app-sidebar-note.active small {
+  background: #08c;
+  color: white;
+}
+
+/* NOTE EDITOR/PREVIEW (MAIN) STYLES */
+
+.app-main {
+  width: 70%;
+  height: 100vh;
+}
+.app-main-note-edit{
+  height: 90vh;
+}
+
+.no-active-note {
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: #999;
+}
+
+/* Editing */
+.app-main-note-edit {
+  padding: 25px;
+}
+
+.app-main-note-edit>input,
+.app-main-note-edit>textarea {
+  display: block;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  width: 100%;
+  height: calc(90vh - 130px);
+  padding: 10px;
+  resize: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+.app-main-note-edit input {
+  height: 50px;
+  font-size: 2rem;
 }
