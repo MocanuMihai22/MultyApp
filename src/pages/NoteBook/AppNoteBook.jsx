@@ -1,7 +1,7 @@
 // import uuid from 'react-uuid'
 import Sidebar from './Sidebar'
 import Content from './Content'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Header } from "../../Header";
 import BookIcon from '@material-ui/icons//Book';
 import HighlightIcon from '@material-ui/icons/Highlight';
@@ -9,8 +9,16 @@ import PlaylistAddCheckIcon from '@material-ui/icons/PlaylistAddCheck';
 
 
 function AppNoteBook() {
-  const [notes, setNotes] = useState([])
+  const [notes, setNotes] = useState(()=>{
+    const localValue = localStorage.getItem("notes")
+    if(localValue == null) return []
+    return JSON.parse(localValue)})
+
   const [activeNote, setActiveNote] = useState(false)
+
+  useEffect(()=>{
+    localStorage.setItem("notes", JSON.stringify(notes))
+  },[notes])
 
   const date = new Date(Date.now()).toLocaleDateString("en-US")
   
