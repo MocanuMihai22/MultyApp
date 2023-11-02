@@ -146,9 +146,24 @@ form.create-todo > textarea{
   resize: none;
   word-wrap: break-word;
 }
-form.create-todo button{
+
+.create-todo > .todoBtn1{
   position: absolute;
   right: 18px;
+  bottom: -18px;
+  background:#124cb1;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  outline: none;
+}
+.create-todo > .todoBtn2{
+  position: absolute;
+  right: 72px;
   bottom: -18px;
   background:#124cb1;
   color: #fff;
@@ -321,4 +336,59 @@ form.create-note > button {
 .app-main-note-edit input {
   height: 50px;
   font-size: 2rem;
+}
+
+
+@media only screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1rem;
+  }
+  form.create-todo{
+    width: 300px;
+  }
+  form.create-note {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .app-sidebar {
+    width: 40%;
+  }
+  .app-sidebar-header {
+   flex-direction: column;
+   align-items: center;
+  }
+  .sidebar-note-title {
+   font-size: 0.7rem;
+   flex-direction: column;
+   align-items: center;
+  }
+  .app-sidebar-header h1{
+    font-size: 1rem;
+  }
+  .app-sidebar-header button{
+    font-size: 0.7rem;
+  }
+  .app-sidebar-note p {
+   font-size: 0.7rem;
+  }
+  .note-meta{
+    font-size: 0.5rem;
+  }
+  .no-active-note {
+    font-size: 1rem;
+    width: 60%;
+  }
+
+.app-main-note-edit input {
+  height: 25px;
+  font-size: 1rem;
+}
+.app-main-note-edit textarea{
+  font-size: 0.7rem;
+}
+.app-main {
+  width: 60%;
+}
 }

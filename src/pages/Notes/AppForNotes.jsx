@@ -48,8 +48,6 @@ return(
     icon3={<BookIcon />}
     theClass3={"secondIconNotebook"}
     theLink3={"/notebook"}
-    
-   
     />
 
     <TextArea onAdd ={addNote}/>

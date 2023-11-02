@@ -1,5 +1,6 @@
 import DeleteIcon from '@material-ui/icons/Delete';
 import ToDoItem from './ToDoItem';
+
  
  export function ToDos({todos, setTodos}){
 
@@ -26,7 +27,7 @@ import ToDoItem from './ToDoItem';
 
       <div className="todoArea">
         <ul>
-        {todos.map(todo=> {
+        {todos.map((todo)=> {
       return (  
       <ToDoItem 
           key={todo.id}
@@ -36,10 +37,12 @@ import ToDoItem from './ToDoItem';
           toggleChecked={toggleChecked}
           deleteItem={deleteItem}
         />
-     
-       )})}
+
+       )
+       })}
     </ul>
     </div>
+    
     </div>
     )
     

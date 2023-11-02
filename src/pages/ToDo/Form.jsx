@@ -1,6 +1,7 @@
 import { useState } from "react"
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
+import FeaturedPlayListIcon from '@material-ui/icons/FeaturedPlayList';
 
 
 export function Form({addToDo}) {
@@ -14,11 +15,14 @@ function handleClick(e){
     addToDo(newItem)
     setNewItem("")
   }
+
+  function handleAddList(e){
+    e.preventDefault()
+    
+  }
   
     return (
-    <form 
-        className="create-todo"
-        >
+    <form  className="create-todo" >
         <textarea
         type='text' 
         id='newItem' 
@@ -28,7 +32,8 @@ function handleClick(e){
         autoFocus
         autoComplete="off"
         />
-        <Fab onClick={handleClick}><AddIcon /></Fab>
+        <Fab  className="todoBtn1" onClick={handleClick}><AddIcon /></Fab>
+        <Fab className="todoBtn2" onClick={handleAddList}><FeaturedPlayListIcon /></Fab>
     </form>
     )
   

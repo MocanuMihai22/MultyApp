@@ -21,7 +21,7 @@ function Sidebar({notes, onAddNote, onDeleteNote, activeNote, setActiveNote}){
             <button className="NBbutton" onClick={()=>onDeleteNote(note.id)}>Delete</button>
         </div>
 
-        <p>{note.body && note.body.substr(0, 100) + "..."}</p>
+        <p>{note.body && note.body.substr(0, 20) + "..."}</p>
 
 
         <small className="note-meta">
@@ -35,7 +35,7 @@ function Sidebar({notes, onAddNote, onDeleteNote, activeNote, setActiveNote}){
             <strong> Added on </strong>{note.firstModified}
         </small>
         <br></br>
-        <small>Page {note.page} {index+1}</small>
+        <small className="note-meta">Page {note.page} {index+1}</small>
     </div>
     )})}
           
