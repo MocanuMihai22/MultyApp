@@ -7,7 +7,7 @@ import "./App.css"
 function App(){
     return (
         <Routes>
-        <Route path="/" element={<h1>H1llo</h1>}/>
+        <Route path="/" element={<AppForToDo />}/>
         <Route path="/todoapp" element={<AppForToDo />}/>
         <Route path="/noteapp" element={<AppForNotes />}/>
         <Route path="/notebook" element={<AppNoteBook />}/>

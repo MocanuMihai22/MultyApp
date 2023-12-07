@@ -1,3 +1,25 @@
+:root{
+  --bg: #eee;
+  --bgImg: ;
+  --textColor: black;
+  --deleteButton: crimson;
+}
+
+.light{
+  --bg: #eee;
+}
+
+.dark{
+  --bg: #121212; 
+  --textColor: #fff;
+  --deleteButton: #DA9F93;
+}
+.axiom-pattern{
+  --bgImg: url("https://www.transparenttextures.com/patterns/axiom-pattern.png");
+}
+.cubes-pattern{
+  --bgImg: url("https://www.transparenttextures.com/patterns/cubes.png");
+}
 * {
   padding: 0;
   margin: 0;
@@ -8,11 +30,12 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 body {
-  background: #eee;
+  background: var(--bg);
   padding: 0 16px;
   overflow-x: hidden;
   overflow-y: scroll;
-  /* background-image: url("https://www.transparenttextures.com/patterns/axiom-pattern.png"); */
+  transition: background 500ms ease-in-out, background-image 1s cubic-bezier(.32,2,.55,.27);
+  background-image: var(--bgImg)
 }
 
 header {
@@ -21,6 +44,61 @@ header {
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: space-between;
+}
+
+/* Button styles */
+
+.button-style {
+  background-color: #FFFFFF;
+  border: 1px solid rgb(209,213,219);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: .3rem 1rem;
+  text-align: center;
+  text-decoration: none #D1D5DB solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-style:hover {
+  background-color: rgb(249,250,251);
+}
+
+.button-style:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.button-style:focus-visible {
+  box-shadow: none;
+}
+
+
+
+
+.pickerDiv{
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pickerButtons{
+  padding-top: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  
 }
 
 header h1 {
@@ -127,6 +205,9 @@ footer p {
   align-items: center;
   
 }
+.todosBox h1{
+  color: var(--textColor)
+}
 form.create-todo{
   position: relative;
   width: 480px;
@@ -224,9 +305,6 @@ form.create-note > button {
 .notebookColor{
   background-color: #dcb084;
 }
-.background{
-  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
-}
 
 /* NOTEBOOK styling */
 
@@ -239,6 +317,7 @@ form.create-note > button {
   font-family: inherit;
   cursor: pointer;
   color: #08c;
+  font-weight: bold;
 }
 .NBbutton:hover {
   color: #04c;
@@ -249,6 +328,9 @@ form.create-note > button {
 }
 
 /* SIDEBAR STYLES */
+.app-sidebar h1{
+  color: var(--textColor);
+}
 
 .app-sidebar {
   width: 30%;
@@ -278,7 +360,8 @@ form.create-note > button {
   justify-content: space-between;
 }
 .app-sidebar-note button {
-  color: crimson;
+  color: var(--deleteButton);
+  font-weight: bold;
 }
 .app-sidebar-note p {
   margin: 10px 0;
@@ -296,7 +379,12 @@ form.create-note > button {
   background: #08c;
   color: white;
 }
-
+.app-sidebar-note p{
+  color: var(--textColor);
+}
+ .sidebar-note-title{
+  color: var(--textColor);
+ }
 /* NOTE EDITOR/PREVIEW (MAIN) STYLES */
 
 .app-main {
@@ -339,7 +427,22 @@ form.create-note > button {
 }
 
 
+
+/* MEDIA QUERIES */
+
 @media only screen and (max-width: 768px) {
+  .pickerDiv{
+    width: 200px;
+  }
+  .pickerButtons{
+    justify-content: center;
+  }
+  .button-style {
+   margin: 5px
+  }
+  .pickerDiv h3{
+    font-size: 0.7rem;
+    }
   header h1 {
     font-size: 1rem;
   }
@@ -352,6 +455,17 @@ form.create-note > button {
 }
 
 @media only screen and (max-width: 900px) {
+  .pickerDiv{
+    width: 300px;
+  }
+  .pickerDiv h3{
+  font-size: 1rem;
+  }
+
+  .button-style {
+    font-size: 0.7rem;
+    padding: .15rem 0.5rem;
+  }
   .app-sidebar {
     width: 40%;
   }

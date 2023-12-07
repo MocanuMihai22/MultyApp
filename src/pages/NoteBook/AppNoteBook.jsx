@@ -45,7 +45,7 @@ function AppNoteBook() {
       )
   }
 
-  const onUpdateNote = (updatedNote) =>{
+ function onUpdateNote (updatedNote){
     const updatedNotesArray = notes.map(note=>{
       if(note.id===activeNote){
         return updatedNote;

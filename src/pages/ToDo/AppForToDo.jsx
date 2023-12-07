@@ -26,7 +26,7 @@ function addToDo(title){
 }
 
   return (
-    <div className='background'>
+    <div>
 
     <Header 
     color={'purple'} 
